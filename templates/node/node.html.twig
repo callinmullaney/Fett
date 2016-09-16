@@ -74,7 +74,14 @@
 * @see template_process()
 */
 #}
-<article id="node-{{ node.id }}" class="{{ attributes.class }}"{{ attributes }}>
+{%
+  set classes = [
+    'node',
+    node.bundle|clean_class,
+    view_mode|clean_class
+  ]
+%}
+<article id="node-{{ node.id }}" {{ attributes.addClass(classes) }} {{ attributes }}>
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>

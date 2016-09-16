@@ -1,0 +1,23 @@
+<div role="document" {{ attributes.addClass('user-login') }}>
+
+  <main class="main" role="main">
+    <div class="inner">
+
+      <img class="logo" alt="logo" src="{{ logopath }}" />
+
+      {% if messages %}
+        <section class="messages">
+          <div class="wrapper">
+            {{ messages }}
+          </div>
+        </section>
+      {% endif %}
+
+      <section class="content" id="content">
+        {{ page.content }}
+      </section>
+
+    </div>
+  </main>
+
+</div>

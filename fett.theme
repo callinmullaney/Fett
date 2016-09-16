@@ -144,6 +144,9 @@ function fett_preprocess_page(&$vars) {
 
   // Mobile menu ops
   fett_mobile_menu_preprocess_page($vars, $config);
+
+  //logo path for user login page
+  $vars['logopath'] = '/' . \Drupal::theme()->getActiveTheme()->getPath() . '/logo.svg';
 }
 
 /**
